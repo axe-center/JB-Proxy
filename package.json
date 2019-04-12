@@ -1,15 +1,45 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
-  "license": "",
+  "name": "jb-fec-proxy",
+  "version": "1.0.0",
+  "description": "JB FEC Proxy",
+  "author": "Jonathan Becker",
+  "license": "Unlicensed",
   "engines": {
-    "node": ">=6.13.0"
+    "node": ">=6.0.0"
   },
-  "scripts": {},
-  "dependencies": {},
+  "scripts": {
+    "dev-start": "nodemon ./server/server.js",
+    "start": "node ./server/server.js",
+    "build": "webpack --watch -d",
+    "restart": "pm2 startOrRestart ecosystem.config.js",
+    "deploy": "pm2 deploy ecosystem.config.js production",
+    "data": "node ./db/populate.js"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.3",
+    "file-system": "^2.2.2",
+    "mongoose": "^5.4.20",
+    "nodemon": "^1.18.10",
+    "path": "^0.12.7",
+    "prop-types": "^15.7.2",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-star-ratings": "^2.3.0",
+    "victory": "^32.1.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "pm2": "^3.4.1"
   }
 }
